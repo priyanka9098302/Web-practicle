@@ -1,0 +1,90 @@
+<!--Q18: Create and manipulate elements using JavaScript: append, remove, or modify child nodes)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Element Manipulation Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px solid #333;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+    }
+
+    .item {
+      padding: 5px 10px;
+      margin: 5px 0;
+      border: 1px solid #666;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+
+    button {
+      margin: 5px 5px 5px 0;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOM Element Manipulation Demo</h1>
+
+  <div>
+    <button id="addBtn">Add Item</button>
+    <button id="removeBtn">Remove Last Item</button>
+    <button id="modifyBtn">Modify First Item</button>
+  </div>
+
+  <div class="container" id="itemContainer">
+    <p>Items will appear here:</p>
+  </div>
+
+  <script>
+    const container = document.getElementById('itemContainer');
+    const addBtn = document.getElementById('addBtn');
+    const removeBtn = document.getElementById('removeBtn');
+    const modifyBtn = document.getElementById('modifyBtn');
+
+    let counter = 1;
+
+    // ===== Append new element =====
+    addBtn.addEventListener('click', () => {
+      const newItem = document.createElement('div'); // create a new div
+      newItem.className = 'item';
+      newItem.textContent = `Item ${counter++}`;
+      container.appendChild(newItem); // add it to container
+    });
+
+    // ===== Remove last child element =====
+    removeBtn.addEventListener('click', () => {
+      const items = container.getElementsByClassName('item');
+      if (items.length > 0) {
+        container.removeChild(items[items.length - 1]);
+      } else {
+        alert('No items to remove!');
+      }
+    });
+
+    // ===== Modify first child element =====
+    modifyBtn.addEventListener('click', () => {
+      const firstItem = container.querySelector('.item');
+      if (firstItem) {
+        firstItem.textContent = firstItem.textContent + ' (Modified)';
+        firstItem.style.backgroundColor = '#ffeb3b';
+      } else {
+        alert('No items to modify!');
+      }
+    });
+  </script>
+
+</body>
+</html>

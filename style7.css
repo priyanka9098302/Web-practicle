@@ -1,0 +1,66 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Page background */
+body {
+  min-height: 100vh;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Styling */
+.card {
+  width: 350px;
+
+  /* Box Model */
+  padding: 25px;              /* inside space */
+  margin: 20px;               /* outside space */
+
+  /* Border */
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+
+  /* Background */
+  background-color: rgba(0, 0, 0, 0.6);
+  background-repeat: no-repeat;
+
+  /* Visual enhancement */
+  color: #fff;
+  text-align: center;
+}
+
+/* Text */
+.card h1 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Button */
+.card button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff9800;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #fff;
+}

@@ -1,0 +1,99 @@
+<!--Q17: Add interactivity using event listeners (addEventListener, removeEventListener) for mouse/keyboard events-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Listeners Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .box {
+      padding: 15px;
+      margin: 10px 0;
+      border: 2px solid #333;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s;
+    }
+
+    .highlight {
+      background-color: #ffeb3b;
+      border-color: #fbc02d;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Event Listeners Demo</h1>
+
+  <div class="box" id="mouseBox">
+    <p>Hover over this box to highlight it.</p>
+  </div>
+
+  <div class="box" id="clickBox">
+    <p>Click the button to toggle highlight.</p>
+    <button id="toggleBtn">Toggle Highlight</button>
+  </div>
+
+  <div class="box" id="keyboardBox">
+    <p>Type something in the input to see it in real-time:</p>
+    <input type="text" id="inputField" placeholder="Type here..." />
+    <p>Output: <span id="output"></span></p>
+  </div>
+
+  <script>
+    // ===== Mouse Events =====
+    const mouseBox = document.getElementById('mouseBox');
+
+    function highlightBox() {
+      mouseBox.classList.add('highlight');
+    }
+
+    function removeHighlight() {
+      mouseBox.classList.remove('highlight');
+    }
+
+    mouseBox.addEventListener('mouseenter', highlightBox);
+    mouseBox.addEventListener('mouseleave', removeHighlight);
+
+    // ===== Click Events =====
+    const clickBox = document.getElementById('clickBox');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    function toggleClickHighlight() {
+      clickBox.classList.toggle('highlight');
+    }
+
+    toggleBtn.addEventListener('click', toggleClickHighlight);
+
+    // ===== Keyboard/Input Events =====
+    const inputField = document.getElementById('inputField');
+    const output = document.getElementById('output');
+
+    function showInput(event) {
+      output.textContent = event.target.value;
+    }
+
+    inputField.addEventListener('input', showInput);
+
+    // ===== removeEventListener Example =====
+    // After 10 seconds, the hover highlight on mouseBox will be disabled
+    setTimeout(() => {
+      mouseBox.removeEventListener('mouseenter', highlightBox);
+      mouseBox.removeEventListener('mouseleave', removeHighlight);
+      console.log('Hover events removed from mouseBox!');
+    }, 10000);
+  </script>
+
+</body>
+</html>

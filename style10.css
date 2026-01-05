@@ -1,0 +1,35 @@
+/* Page container */
+.page {
+  width: 80%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Div-based layout */
+.header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.content {
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.footer {
+  background-color: #ddd;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Span styling */
+.highlight {
+  color: yellow;
+}
+
+.important {
+  color: red;
+  font-weight: bold;
+}

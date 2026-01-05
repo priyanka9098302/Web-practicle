@@ -1,0 +1,57 @@
+<!--Q13: Create and invoke user-defined functions in JavaScript; use var, let, and const for scope demonstration-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Functions and Scope</title>
+</head>
+<body>
+
+<script>
+  document.write("<h3>User-Defined Functions</h3>");
+
+  // Function definition
+  function add(a, b) {
+    return a + b;
+  }
+
+  // Function call
+  var sum = add(5, 3);
+  document.write("Sum = " + sum + "<br><br>");
+
+  document.write("<h3>Scope Demonstration</h3>");
+
+  // var scope (function scope)
+  function varExample() {
+    var x = 10;
+    if (true) {
+      var x = 20;   // same variable (redeclared)
+      document.write("Inside block (var): " + x + "<br>");
+    }
+    document.write("Inside function (var): " + x + "<br><br>");
+  }
+  varExample();
+
+  // let scope (block scope)
+  function letExample() {
+    let y = 10;
+    if (true) {
+      let y = 20;   // different variable (block-scoped)
+      document.write("Inside block (let): " + y + "<br>");
+    }
+    document.write("Inside function (let): " + y + "<br><br>");
+  }
+  letExample();
+
+  // const scope (block scope, constant value)
+  function constExample() {
+    const z = 10;
+    document.write("Const value: " + z + "<br>");
+    // z = 20; ❌ Not allowed
+  }
+  constExample();
+</script>
+
+</body>
+</html>
+

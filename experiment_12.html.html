@@ -1,0 +1,49 @@
+<!--Q12: Write JavaScript to demonstrate conditional statements and looping (for, while, do... while)-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conditionals and Loops</title>
+</head>
+<body>
+
+<script>
+  // CONDITIONAL STATEMENT
+  var num = 8;
+
+  document.write("<h3>Conditional Statement</h3>");
+  if (num % 2 == 0) {
+    document.write(num + " is Even<br><br>");
+  } else {
+    document.write(num + " is Odd<br><br>");
+  }
+
+  // FOR LOOP
+  document.write("<h3>For Loop</h3>");
+  for (var i = 1; i <= 5; i++) {
+    document.write("i = " + i + "<br>");
+  }
+
+  document.write("<br>");
+
+  // WHILE LOOP
+  document.write("<h3>While Loop</h3>");
+  var j = 1;
+  while (j <= 5) {
+    document.write("j = " + j + "<br>");
+    j++;
+  }
+
+  document.write("<br>");
+
+  // DO...WHILE LOOP
+  document.write("<h3>Do...While Loop</h3>");
+  var k = 1;
+  do {
+    document.write("k = " + k + "<br>");
+    k++;
+  } while (k <= 5);
+</script>
+
+</body>
+</html>
+

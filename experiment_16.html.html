@@ -1,0 +1,74 @@
+<!--Q16: Show or hide HTML elements using JavaScript and toggle CSS classes dynamically-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show/Hide and Toggle Classes Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .box {
+      padding: 15px;
+      margin: 10px 0;
+      border: 2px solid #333;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+      transition: all 0.3s ease;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .highlight {
+      background-color: #ffeb3b;
+      border-color: #fbc02d;
+      color: #000;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Show/Hide and Toggle Classes Demo</h1>
+
+  <div class="box" id="box1">
+    <p>This box can be shown or hidden.</p>
+    <button onclick="toggleVisibility()">Show/Hide Box</button>
+  </div>
+
+  <div class="box" id="box2">
+    <p>This box can toggle highlight styling.</p>
+    <button onclick="toggleHighlight()">Toggle Highlight</button>
+  </div>
+
+  <script>
+    // Show or hide an element
+    function toggleVisibility() {
+      const box = document.getElementById('box1');
+      if (box.classList.contains('hidden')) {
+        box.classList.remove('hidden');
+      } else {
+        box.classList.add('hidden');
+      }
+    }
+
+    // Toggle CSS class dynamically
+    function toggleHighlight() {
+      const box = document.getElementById('box2');
+      box.classList.toggle('highlight');
+    }
+  </script>
+
+</body>
+</html>
